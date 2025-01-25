@@ -1,0 +1,53 @@
+﻿<Window x:Class="StatusCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Character Status Calculator" Height="700" Width="600">
+    <Grid>
+        <TabControl Name="CharacterTabs" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Height="591" RenderTransformOrigin="0.5,0.5">
+            <TabItem Header="Character 1">
+                <StackPanel Height="530" >
+
+                        <!-- HP Input Box -->
+                        <TextBlock Text="HP:" Margin="5"/>
+                        <TextBox Name="HPBox" Margin="5" VerticalAlignment="Center" TextChanged="OnTextChanged"/>
+
+                        <!-- ATK Input Box -->
+                        <TextBlock Text="ATK:" Margin="5"/>
+                        <TextBox Name="ATKBox" Margin="5" VerticalAlignment="Center" TextChanged="OnTextChanged"/>
+
+                        <!-- DEF Input Box -->
+                        <TextBlock Text="DEF:" Margin="5"/>
+                        <TextBox Name="DEFBox" Margin="5" VerticalAlignment="Center" TextChanged="OnTextChanged"/>
+
+                        <!-- DMG taken this turn -->
+                        <TextBlock Text="DMG taken this turn:" Margin="5"/>
+                        <TextBox Name="DMGTakenThisTurnBox" Margin="5" VerticalAlignment="Center" TextChanged="OnTextChanged"/>
+
+                        <!-- DMG taken per turn -->
+                        <TextBlock Text="DMG taken per turn:" Margin="5"/>
+                        <TextBox Name="DMGTakenPerTurnBox" Margin="5" VerticalAlignment="Center" TextChanged="OnTextChanged"/>
+
+                        <!-- Turn count Box -->
+                        <TextBlock Text="Turn count:" Margin="5"/>
+                        <TextBox Name="TurnCountBox" Margin="5" VerticalAlignment="Center" TextChanged="OnTextChanged"/>
+
+                        <Button Name="NextTurn" Width="200" Margin="5" Content="NextTurn" Click="NextTurn_Click"/>
+
+                        <TextBlock Name="ResultTextBlock" HorizontalAlignment="Left" VerticalAlignment="Bottom"  FontSize="16"/>
+
+                 </StackPanel>
+
+                    <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Rename" Click="RenameMenuItem_Click"/>
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+            </TabItem>
+        </TabControl>
+
+       
+        <Button Name="AddCharacterTabButton" Content="Add New Character Tab" Width="200" Height="30" Margin="0,610,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="AddCharacterTabButton_Click"/>
+        <Button Name="SaveButton" Content="Save" Width="100" Height="30"  Margin="40,610,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="SaveButton_Click" />
+        <Button Name="LoadButton" Content="Load" Width="100" Height="30"  Margin="0,610,40,0" VerticalAlignment="Top" HorizontalAlignment="Right" Click="LoadButton_Click" />
+    </Grid>
+</Window>
